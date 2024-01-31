@@ -1,0 +1,9 @@
+<h1>Commits</h1>
+
+<ol>
+  <% @dolt_commits.each do |dolt_commit| %>
+    <li>
+      <%= dolt_commit.commit_hash %>
+    </li>
+  <% end %>
+</ol>
