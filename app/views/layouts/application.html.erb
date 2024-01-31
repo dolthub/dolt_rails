@@ -6,10 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application.css", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
+  <header>
+    <a href=<%= root_path %>>
+      <%=image_tag("dolt-rails.png", alt: "Dolt on Rails", height: 50, width: "auto")%>
+    </a>
+
+    <%= link_to "New Article", new_article_path %>
+    <%= link_to "Commit Log", "/commits" %>
+  </header>
+  
   <body>
     <%= yield %>
   </body>
