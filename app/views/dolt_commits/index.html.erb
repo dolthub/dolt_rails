@@ -1,9 +1,22 @@
+<%= stylesheet_link_tag "styles.css" %>
+
 <h1>Commits</h1>
 
-<ol>
+<table>
+  <tr>
+    <th>Commit Hash</td>
+    <th>Date</td>
+    <th>Committer</td>
+    <th>Message</td>
+  </tr>
   <% @dolt_commits.each do |dolt_commit| %>
-    <li>
-      <%= dolt_commit.commit_hash %>
+    <tr>
+      <td><%= dolt_commit.commit_hash %></td>
+      <td><%= dolt_commit.date %></td>
+      <td><%= dolt_commit.committer %></td>
+      <td><%= dolt_commit.message %></td>
+    </tr>
     </li>
   <% end %>
-</ol>
+</table>
+
