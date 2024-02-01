@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get "/commits", to: "dolt_commits#index"
   get "/branches", to: "branch#index"
+  post "/branches", to: "branch#create"
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

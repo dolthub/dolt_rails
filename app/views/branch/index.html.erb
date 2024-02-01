@@ -8,5 +8,16 @@
       <%= branch.name %>
     </li>
   <% end %>
-</table>
+</ul>
 
+<h1>Create Branch</h1>
+<%= form_with model: @branch do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
