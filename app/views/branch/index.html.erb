@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "styles.css" %>
+
+<h1>Branches</h1>
+
+<ul>
+  <% @branches.each do |branch| %>
+    <li>
+      <%= branch.name %>
+    </li>
+  <% end %>
+</table>
+
