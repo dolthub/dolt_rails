@@ -11,12 +11,16 @@
   </head>
 
   <header>
-    <a href=<%= root_path %>>
-      <%=image_tag("dolt-rails.png", alt: "Dolt on Rails", height: 50, width: "auto")%>
-    </a>
-
+    <span>
+      <a href=<%= root_path %>>
+        <%=image_tag("dolt-rails.png", alt: "Dolt on Rails", height: 50, width: "auto")%>
+      </a>
     <%= link_to "New Article", new_article_path %>
-    <%= link_to "Commit Log", "/commits" %>
+    </span>
+
+    <span style="float:right;">
+      <%= link_to "Branches", "/branches" %>
+      <%= link_to "Commit Log", "/commits" %>
   </header>
   
   <body>
