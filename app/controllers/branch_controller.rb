@@ -14,6 +14,13 @@ class BranchController < ApplicationController
     end
   end
 
+  def destroy
+    @branch = Branch.find(params[:name])
+    @branch.destroy
+
+    redirect_to branches_path
+  end
+
   private
     def branch_params
       params.require(:branch).permit(:name)

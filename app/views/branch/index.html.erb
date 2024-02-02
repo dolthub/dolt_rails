@@ -5,7 +5,10 @@
 <ul>
   <% @branches.each do |branch| %>
     <li>
-      <%= branch.name %>
+      <%= branch.name %> <small><%= link_to "[delete]", "/branches/" + branch.name, data: {
+			     turbo_method: :delete,
+			     turbo_confirm: "Are you sure?"
+			     } %></small>
     </li>
   <% end %>
 </ul>
