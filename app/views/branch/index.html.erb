@@ -9,11 +9,15 @@
       <b><%= branch.name %></b>
     <% else %>
       <%= branch.name %>
+      <small>
+	<%= link_to "[set active]", "/branches/" + branch.name %>
+	<%= link_to "[delete]", "/branches/" + branch.name, data: {
+	    turbo_method: :delete,
+	    turbo_confirm: "Are you sure?"
+	    } %>
+	&nbsp;
+      </small>
     <% end %>
-      <small><%= link_to "[delete]", "/branches/" + branch.name, data: {
-		 turbo_method: :delete,
-		 turbo_confirm: "Are you sure?"
-		 } %></small>
     </li>
   <% end %>
 </ul>

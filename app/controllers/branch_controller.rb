@@ -21,6 +21,13 @@ class BranchController < ApplicationController
     redirect_to branches_path
   end
 
+  def set_active
+    @branch = Branch.find(params[:name])
+    session[:active_branch] = @branch.name
+
+    redirect_to branches_path
+  end
+
   private
     def branch_params
       params.require(:branch).permit(:name)
