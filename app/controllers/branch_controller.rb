@@ -9,7 +9,7 @@ class BranchController < ApplicationController
     @branch = Branch.new(branch_params)
 
     if @branch.save
-      redirect_to index
+      redirect_to branches_path
     else
       render :new, status: :unprocessable_entity
     end
