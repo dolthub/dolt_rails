@@ -2,6 +2,7 @@ class BranchController < ApplicationController
   def index
     @branches = Branch.all
     @branch   = Branch.new(name: "")
+    @status   = params[:status]
   end
 
   def create
@@ -34,7 +35,7 @@ class BranchController < ApplicationController
     @merge_branch = Branch.find(params[:name])
     @base_branch.merge(@merge_branch)
 
-    redirect_to branches_path
+    redirect_to branches_path + "/Merged " + @merge_branch.name + " into " + base_branch_name, allow_other_host: true
   end
     
   private

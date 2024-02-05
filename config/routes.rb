@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get "/commits", to: "dolt_commits#index"
 
   get "/branches", to: "branch#index"
-  get "/branches/:name", to: "branch#set_active"
+  get "/branches/:status", to: "branch#index"
+  get "/branches/activate/:name", to: "branch#set_active"
   get "/branches/merge/:name", to: "branch#merge"
   post "/branches", to: "branch#create"
   delete "/branches/:name", to: "branch#destroy"

@@ -1,5 +1,9 @@
 <%= stylesheet_link_tag "styles.css" %>
 
+<% if @status %>
+  <h2><%= @status %></h2>
+<% end %>
+
 <h1>Branches</h1>
 
 <ul>
@@ -10,7 +14,7 @@
     <% else %>
       <%= branch.name %>
       <small>
-	<%= link_to "[set active]", "/branches/" + branch.name %>
+	<%= link_to "[set active]", "/branches/activate/" + branch.name %>
 	<%= link_to "[merge]", "/branches/merge/" + branch.name %>
 	<%= link_to "[delete]", "/branches/" + branch.name, data: {
 	    turbo_method: :delete,
