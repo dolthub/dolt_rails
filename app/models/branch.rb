@@ -26,4 +26,10 @@ class Branch < ApplicationRecord
       return false
     end
   end
+
+  def merge(merge_branch)
+    merge_branch_name = merge_branch.name
+    ActiveRecord::Base.connection.execute("CALL DOLT_MERGE('" + merge_branch_name + "')")
+  end
+    
 end

@@ -28,6 +28,15 @@ class BranchController < ApplicationController
     redirect_to branches_path
   end
 
+  def merge
+    base_branch_name = session[:active_branch]
+    @base_branch  = Branch.find(base_branch_name)
+    @merge_branch = Branch.find(params[:name])
+    @base_branch.merge(@merge_branch)
+
+    redirect_to branches_path
+  end
+    
   private
     def branch_params
       params.require(:branch).permit(:name)

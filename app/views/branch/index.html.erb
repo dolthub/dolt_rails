@@ -11,6 +11,7 @@
       <%= branch.name %>
       <small>
 	<%= link_to "[set active]", "/branches/" + branch.name %>
+	<%= link_to "[merge]", "/branches/merge/" + branch.name %>
 	<%= link_to "[delete]", "/branches/" + branch.name, data: {
 	    turbo_method: :delete,
 	    turbo_confirm: "Are you sure?"
