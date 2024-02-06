@@ -7,6 +7,6 @@ class Comment < ApplicationRecord
 
   private
   def dolt_commit
-    ActiveRecord::Base.connection.execute("CALL DOLT_COMMIT('-am', 'Changed a Comment')")
+    ActiveRecord::Base.connection.execute("CALL DOLT_COMMIT('-Am', 'Changed a Comment')")
   end
 end

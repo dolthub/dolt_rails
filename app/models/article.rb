@@ -10,6 +10,6 @@ class Article < ApplicationRecord
 
   private
   def dolt_commit
-    ActiveRecord::Base.connection.execute("CALL DOLT_COMMIT('-am', 'Changed an Article')")
+    ActiveRecord::Base.connection.execute("CALL DOLT_COMMIT('-Am', 'Changed an Article')")
   end
 end
